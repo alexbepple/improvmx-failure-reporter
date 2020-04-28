@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@architect/architect": "^6.3.5"
+  }
+}
