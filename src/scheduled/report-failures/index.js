@@ -1,6 +1,7 @@
 const got = require('got')
 const r = require('ramda')
 const dff = require('date-fns/fp')
+const util = require('util')
 
 const omitUselessProps = r.omit([
   'created_raw',
@@ -28,9 +29,33 @@ async function getRecentFailuresAsOf(date) {
     )
 }
 
+async function sendEmail(body) {
+  return got
+    .post('https://api.mailjet.com/v3.1/send', {
+      username: process.env.MJ_APIKEY_PUBLIC,
+      password: process.env.MJ_APIKEY_PRIVATE,
+      responseType: 'json',
+      json: {
+        Messages: [
+          {
+            From: { Email: 'alex@bepple.de' },
+            To: [{ Email: 'alex@bepple.de' }],
+            Subject: 'Failures for emails to bepple.de',
+            TextPart: util.inspect(body),
+          },
+        ],
+      },
+    })
+    .then((x) => x.body)
+}
+
+const log = (x) => console.log(JSON.stringify(x, null, 2))
+
 exports.handler = async function (event) {
-  console.log(JSON.stringify(event, null, 2))
+  log(event)
 
   const recentFailures = await getRecentFailuresAsOf(dff.parseISO(event.time))
-  console.log(JSON.stringify(recentFailures, null, 2))
+  log(recentFailures)
+
+  log(await sendEmail(recentFailures))
 }
