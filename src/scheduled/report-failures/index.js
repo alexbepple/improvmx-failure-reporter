@@ -38,9 +38,9 @@ async function sendEmail(body) {
       json: {
         Messages: [
           {
-            From: { Email: 'alex@bepple.de' },
+            From: { Name: 'ImprovMX bot', Email: 'alex@bepple.de' },
             To: [{ Email: 'alex@bepple.de' }],
-            Subject: 'Failures for emails to bepple.de',
+            Subject: 'ImprovMX failures for bepple.de',
             TextPart: util.inspect(body),
           },
         ],
