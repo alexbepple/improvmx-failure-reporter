@@ -18,6 +18,7 @@ async function getRecentFailuresAsOf(date) {
 }
 exports.getRecentFailuresAsOf = getRecentFailuresAsOf
 
+
 const simplifyEvent = r.pick(['status', 'local', 'created', 'message'])
 
 const simplifyLogEntry = r.pipe(
@@ -25,11 +26,28 @@ const simplifyLogEntry = r.pipe(
   r.over(r.lensProp('events'))(r.map(simplifyEvent))
 )
 
+const summarizeEntry = r.pipe( x => [ x.subject, x.sender.email ], r.join('\n') )
+const summarizeEntries = r.pipe( r.map(summarizeEntry), r.join('\n---\n') )
+
+const createEmail = (summary, details) => `
+Summary
+=======
+${summary}
+
+Details
+=======
+${details}
+`
+
 const logEntries2EmailBody = r.pipe(
   r.map(simplifyLogEntry),
-  _ => util.inspect(_, {depth: 3})
+  r.converge(createEmail, [
+    summarizeEntries, 
+    _ => util.inspect(_, {depth: 3})
+  ])
 )
 exports.logEntries2EmailBody = logEntries2EmailBody
+
 
 async function sendEmail(body) {
   return got
