@@ -6,8 +6,11 @@ const util = require('util')
 const omitUselessProps = r.omit([
   'created_raw',
   'forward',
+  'id',
   'messageId',
+  'saved',
   'transport',
+  'url'
 ])
 
 async function getRecentFailuresAsOf(date) {
