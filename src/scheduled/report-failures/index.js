@@ -24,13 +24,13 @@ async function getRecentFailuresAsOf(date) {
     }
   )
     .then((x) => x.body.logs)
-    .then(
-      r.pipe(
-        r.filter((x) => isRecent(dff.parseISO(x.created))),
-        r.map(omitUselessProps)
-      )
-    )
+    .then(r.filter((x) => isRecent(dff.parseISO(x.created))))
 }
+
+const logEntries2EmailBody = r.pipe(
+  r.map(omitUselessProps),
+  util.inspect
+)
 
 async function sendEmail(body) {
   return got
@@ -44,7 +44,7 @@ async function sendEmail(body) {
             From: { Name: 'ImprovMX bot', Email: 'alex@bepple.de' },
             To: [{ Email: 'alex@bepple.de' }],
             Subject: 'ImprovMX failures for bepple.de',
-            TextPart: util.inspect(body),
+            TextPart: body,
           },
         ],
       },
@@ -60,5 +60,5 @@ exports.handler = async function (event) {
   const recentFailures = await getRecentFailuresAsOf(dff.parseISO(event.time))
   log(recentFailures)
 
-  log(await sendEmail(recentFailures))
+  log(await sendEmail(logEntries2EmailBody(recentFailures)))
 }
