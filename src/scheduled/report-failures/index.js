@@ -13,11 +13,10 @@ async function getRecentFailuresAsOf(date) {
       responseType: 'json',
     }
   )
-    .then((x) => x.body.logs)
-    .then(r.filter((x) => isRecent(dff.parseISO(x.created))))
+    .then(x => x.body.logs)
+    .then(r.filter(x => isRecent(dff.parseISO(x.created))))
 }
 exports.getRecentFailuresAsOf = getRecentFailuresAsOf
-
 
 const simplifyEvent = r.pick(['status', 'local', 'created', 'message'])
 
@@ -26,8 +25,8 @@ const simplifyLogEntry = r.pipe(
   r.over(r.lensProp('events'))(r.map(simplifyEvent))
 )
 
-const summarizeEntry = r.pipe( x => [ x.subject, x.sender.email ], r.join('\n') )
-const summarizeEntries = r.pipe( r.map(summarizeEntry), r.join('\n---\n') )
+const summarizeEntry = r.pipe(x => [x.subject, x.sender.email], r.join('\n'))
+const summarizeEntries = r.pipe(r.map(summarizeEntry), r.join('\n---\n'))
 
 const createEmail = (summary, details) => `
 Summary
@@ -42,12 +41,11 @@ ${details}
 const logEntries2EmailBody = r.pipe(
   r.map(simplifyLogEntry),
   r.converge(createEmail, [
-    summarizeEntries, 
-    _ => util.inspect(_, {depth: 3})
+    summarizeEntries,
+    _ => util.inspect(_, { depth: 3 }),
   ])
 )
 exports.logEntries2EmailBody = logEntries2EmailBody
-
 
 async function sendEmail(body) {
   return got
@@ -66,10 +64,10 @@ async function sendEmail(body) {
         ],
       },
     })
-    .then((x) => x.body)
+    .then(x => x.body)
 }
 
-const log = (x) => console.log(JSON.stringify(x, null, 2))
+const log = x => console.log(JSON.stringify(x, null, 2))
 
 exports.handler = async function (event) {
   log(event)
