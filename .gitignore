@@ -4,3 +4,5 @@ prefs.arc
 preferences.arc
 sam.json
 sam.yaml
+
+/.spack-env/

@@ -1,0 +1,1626 @@
+{
+ "_meta": {
+  "file-type": "spack-lockfile",
+  "lockfile-version": 2
+ },
+ "roots": [
+  {
+   "hash": "iwsjcohd2m2ipleovebfs4h7c3rw33bk",
+   "spec": "node-js@12.18.4"
+  }
+ ],
+ "concrete_specs": {
+  "iwsjcohd2m2ipleovebfs4h7c3rw33bk": {
+   "node-js": {
+    "version": "12.18.4",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "debug": false,
+     "doc": false,
+     "icu4c": false,
+     "openssl": true,
+     "zlib": true,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "dependencies": {
+     "gmake": {
+      "hash": "y7j3qlgqapwxzz34psggvzga7gqrhsgh",
+      "type": [
+       "build"
+      ]
+     },
+     "openssl": {
+      "hash": "jk5cjycpr64xbpxnv7xcixwcu4f6ukzy",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "pkgconf": {
+      "hash": "pxfp6qyvcjtrbidxmjxolfqx7alimj3w",
+      "type": [
+       "build"
+      ]
+     },
+     "python": {
+      "hash": "kynesdznz2ebcnfeoj7wgjermg2d2pza",
+      "type": [
+       "build"
+      ]
+     },
+     "zlib": {
+      "hash": "id3vwmqu67cgexfopp3rut5wubjdwbjy",
+      "type": [
+       "build",
+       "link"
+      ]
+     }
+    },
+    "hash": "u3zw2ppiofi4e7purrznhmejut74w6ab"
+   }
+  },
+  "y7j3qlgqapwxzz34psggvzga7gqrhsgh": {
+   "gmake": {
+    "version": "4.2.1",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "guile": false,
+     "nls": true,
+     "patches": [
+      "ca60bd9c1a1b35bc0dc58b6a4a19d5c2651f7a94a4b22b2c5ea001a1ca7a8a7f",
+      "fe5b60d091c33f169740df8cb718bf4259f84528b42435194ffe0dd5b79cd125"
+     ],
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "patches": [
+     "fe5b60d091c33f169740df8cb718bf4259f84528b42435194ffe0dd5b79cd125",
+     "ca60bd9c1a1b35bc0dc58b6a4a19d5c2651f7a94a4b22b2c5ea001a1ca7a8a7f"
+    ],
+    "dependencies": {
+     "gettext": {
+      "hash": "46mvzsihowesindga5rgufqqwbrrviso",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "texinfo": {
+      "hash": "rghbvrzhipx3xzkqgpw2ztqfkf4wsmbj",
+      "type": [
+       "build"
+      ]
+     }
+    },
+    "hash": "zbqgvqiycasdyslkbcvntbbcizabobow"
+   }
+  },
+  "46mvzsihowesindga5rgufqqwbrrviso": {
+   "gettext": {
+    "version": "0.21",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "bzip2": true,
+     "curses": true,
+     "git": true,
+     "libunistring": false,
+     "libxml2": true,
+     "tar": true,
+     "xz": true,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "dependencies": {
+     "bzip2": {
+      "hash": "wkw2llhah5e3dvj654vejzxzk47oohas",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "libiconv": {
+      "hash": "3kkozjq3e2jewemniqcyrvu7xjnfla3t",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "libxml2": {
+      "hash": "33totx4yrvgukycgfixblet6kxtfcmtn",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "ncurses": {
+      "hash": "fkb3e6bhfvrchaqchzkhpnews3w7tiu3",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "tar": {
+      "hash": "spkbficf7n63c2shlkrl4ttw4dcuag5l",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "xz": {
+      "hash": "6jwhzs6r2oiwohtncgyejodll2sxilm3",
+      "type": [
+       "build",
+       "link",
+       "run"
+      ]
+     }
+    },
+    "hash": "u6uvbjiy2yj6et4anbqdc326zc5c3vm5"
+   }
+  },
+  "wkw2llhah5e3dvj654vejzxzk47oohas": {
+   "bzip2": {
+    "version": "1.0.8",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "shared": true,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "dependencies": {
+     "diffutils": {
+      "hash": "67w5vu5tjnu7mgyqs7qnzb2crgofjmu6",
+      "type": [
+       "build"
+      ]
+     }
+    },
+    "hash": "uem3fk5vcdj57lo6nyz7l35dg5c5jbc2"
+   }
+  },
+  "67w5vu5tjnu7mgyqs7qnzb2crgofjmu6": {
+   "diffutils": {
+    "version": "3.7",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "dependencies": {
+     "libiconv": {
+      "hash": "3kkozjq3e2jewemniqcyrvu7xjnfla3t",
+      "type": [
+       "build",
+       "link"
+      ]
+     }
+    },
+    "hash": "67w5vu5tjnu7mgyqs7qnzb2crgofjmu6"
+   }
+  },
+  "3kkozjq3e2jewemniqcyrvu7xjnfla3t": {
+   "libiconv": {
+    "version": "1.16",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "hash": "3kkozjq3e2jewemniqcyrvu7xjnfla3t"
+   }
+  },
+  "33totx4yrvgukycgfixblet6kxtfcmtn": {
+   "libxml2": {
+    "version": "2.9.10",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "python": false,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "dependencies": {
+     "libiconv": {
+      "hash": "3kkozjq3e2jewemniqcyrvu7xjnfla3t",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "pkgconf": {
+      "hash": "pxfp6qyvcjtrbidxmjxolfqx7alimj3w",
+      "type": [
+       "build"
+      ]
+     },
+     "xz": {
+      "hash": "6jwhzs6r2oiwohtncgyejodll2sxilm3",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "zlib": {
+      "hash": "id3vwmqu67cgexfopp3rut5wubjdwbjy",
+      "type": [
+       "build",
+       "link"
+      ]
+     }
+    },
+    "hash": "puyakoxlaqfmkwetgynouw7yhshngcbg"
+   }
+  },
+  "pxfp6qyvcjtrbidxmjxolfqx7alimj3w": {
+   "pkgconf": {
+    "version": "1.7.3",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "hash": "pxfp6qyvcjtrbidxmjxolfqx7alimj3w"
+   }
+  },
+  "6jwhzs6r2oiwohtncgyejodll2sxilm3": {
+   "xz": {
+    "version": "5.2.5",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "pic": false,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "hash": "6jwhzs6r2oiwohtncgyejodll2sxilm3"
+   }
+  },
+  "id3vwmqu67cgexfopp3rut5wubjdwbjy": {
+   "zlib": {
+    "version": "1.2.11",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "optimize": true,
+     "pic": true,
+     "shared": true,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "hash": "id3vwmqu67cgexfopp3rut5wubjdwbjy"
+   }
+  },
+  "fkb3e6bhfvrchaqchzkhpnews3w7tiu3": {
+   "ncurses": {
+    "version": "6.2",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "symlinks": false,
+     "termlib": true,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "dependencies": {
+     "pkgconf": {
+      "hash": "pxfp6qyvcjtrbidxmjxolfqx7alimj3w",
+      "type": [
+       "build"
+      ]
+     }
+    },
+    "hash": "g5wyknvhr3judhojkbt737ad6z5ft5ux"
+   }
+  },
+  "spkbficf7n63c2shlkrl4ttw4dcuag5l": {
+   "tar": {
+    "version": "1.32",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "dependencies": {
+     "libiconv": {
+      "hash": "3kkozjq3e2jewemniqcyrvu7xjnfla3t",
+      "type": [
+       "build",
+       "link"
+      ]
+     }
+    },
+    "hash": "spkbficf7n63c2shlkrl4ttw4dcuag5l"
+   }
+  },
+  "rghbvrzhipx3xzkqgpw2ztqfkf4wsmbj": {
+   "texinfo": {
+    "version": "6.5",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "patches": [
+      "12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a",
+      "1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1"
+     ],
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "patches": [
+     "1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1",
+     "12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a"
+    ],
+    "dependencies": {
+     "perl": {
+      "hash": "achfaygmuqkfxzgjziq6rz3vqthetvod",
+      "type": [
+       "build",
+       "link"
+      ]
+     }
+    },
+    "hash": "r3zddsddoqnbnnyq7uoyxhlpo6xzsl4e"
+   }
+  },
+  "achfaygmuqkfxzgjziq6rz3vqthetvod": {
+   "perl": {
+    "version": "5.32.0",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "cpanm": true,
+     "patches": [
+      "517afe8ca1cb12f798f20b21583d91463fe3f4fa9244c6c8e054a92c8135da8f"
+     ],
+     "shared": true,
+     "threads": true,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "patches": [
+     "517afe8ca1cb12f798f20b21583d91463fe3f4fa9244c6c8e054a92c8135da8f"
+    ],
+    "dependencies": {
+     "berkeley-db": {
+      "hash": "zixsuu6xofncsolxn2s6i4vncxy7bvx2",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "gdbm": {
+      "hash": "au3lnbktfpezu2bxoxtib4kgsfhnpcge",
+      "type": [
+       "build",
+       "link"
+      ]
+     }
+    },
+    "hash": "hlmfvxij7qfv7ylt7f46s6b75o5av7ur"
+   }
+  },
+  "zixsuu6xofncsolxn2s6i4vncxy7bvx2": {
+   "berkeley-db": {
+    "version": "18.1.40",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "hash": "zixsuu6xofncsolxn2s6i4vncxy7bvx2"
+   }
+  },
+  "au3lnbktfpezu2bxoxtib4kgsfhnpcge": {
+   "gdbm": {
+    "version": "1.18.1",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "dependencies": {
+     "readline": {
+      "hash": "ofcsahtvz5leidmnpgwrsq77gqah6kpr",
+      "type": [
+       "build",
+       "link"
+      ]
+     }
+    },
+    "hash": "qcqdlzfs4rgvt7nt7wldpjr63z26clt6"
+   }
+  },
+  "ofcsahtvz5leidmnpgwrsq77gqah6kpr": {
+   "readline": {
+    "version": "8.0",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "dependencies": {
+     "ncurses": {
+      "hash": "fkb3e6bhfvrchaqchzkhpnews3w7tiu3",
+      "type": [
+       "build",
+       "link"
+      ]
+     }
+    },
+    "hash": "d4acjhuwhpjby4t5qfhrjtxj7ebioxex"
+   }
+  },
+  "jk5cjycpr64xbpxnv7xcixwcu4f6ukzy": {
+   "openssl": {
+    "version": "1.1.1i",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "systemcerts": true,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "dependencies": {
+     "perl": {
+      "hash": "achfaygmuqkfxzgjziq6rz3vqthetvod",
+      "type": [
+       "build",
+       "test"
+      ]
+     },
+     "zlib": {
+      "hash": "id3vwmqu67cgexfopp3rut5wubjdwbjy",
+      "type": [
+       "build",
+       "link"
+      ]
+     }
+    },
+    "hash": "qtyq64abolvs5jopehfkrwu2g5jtzyb4"
+   }
+  },
+  "kynesdznz2ebcnfeoj7wgjermg2d2pza": {
+   "python": {
+    "version": "3.8.6",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "bz2": true,
+     "ctypes": true,
+     "dbm": true,
+     "debug": false,
+     "libxml2": true,
+     "lzma": true,
+     "nis": false,
+     "optimizations": false,
+     "patches": [
+      "0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87"
+     ],
+     "pic": true,
+     "pyexpat": true,
+     "pythoncmd": true,
+     "readline": true,
+     "shared": true,
+     "sqlite3": true,
+     "ssl": true,
+     "tix": false,
+     "tkinter": false,
+     "ucs4": false,
+     "uuid": true,
+     "zlib": true,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "patches": [
+     "0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87"
+    ],
+    "dependencies": {
+     "bzip2": {
+      "hash": "wkw2llhah5e3dvj654vejzxzk47oohas",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "expat": {
+      "hash": "komdiy5yenmoh5444rslvs3cfk2giajl",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "gdbm": {
+      "hash": "au3lnbktfpezu2bxoxtib4kgsfhnpcge",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "gettext": {
+      "hash": "46mvzsihowesindga5rgufqqwbrrviso",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "libffi": {
+      "hash": "hllwl5a6tqmhxfalbxzv5avrhm2fhicz",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "ncurses": {
+      "hash": "fkb3e6bhfvrchaqchzkhpnews3w7tiu3",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "openssl": {
+      "hash": "jk5cjycpr64xbpxnv7xcixwcu4f6ukzy",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "pkgconf": {
+      "hash": "pxfp6qyvcjtrbidxmjxolfqx7alimj3w",
+      "type": [
+       "build"
+      ]
+     },
+     "readline": {
+      "hash": "ofcsahtvz5leidmnpgwrsq77gqah6kpr",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "sqlite": {
+      "hash": "tkzmx3nefgze4l6hajxzj2225y3npre3",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "xz": {
+      "hash": "6jwhzs6r2oiwohtncgyejodll2sxilm3",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "zlib": {
+      "hash": "id3vwmqu67cgexfopp3rut5wubjdwbjy",
+      "type": [
+       "build",
+       "link"
+      ]
+     }
+    },
+    "hash": "c7aquyufh3pyp2lleo4tigyue76xzp7v"
+   }
+  },
+  "komdiy5yenmoh5444rslvs3cfk2giajl": {
+   "expat": {
+    "version": "2.2.10",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "libbsd": false,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "hash": "komdiy5yenmoh5444rslvs3cfk2giajl"
+   }
+  },
+  "hllwl5a6tqmhxfalbxzv5avrhm2fhicz": {
+   "libffi": {
+    "version": "3.3",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "patches": [
+      "26f26c6f29a7ce9bf370ad3ab2610f99365b4bdd7b82e7c31df41a3370d685c0"
+     ],
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "patches": [
+     "26f26c6f29a7ce9bf370ad3ab2610f99365b4bdd7b82e7c31df41a3370d685c0"
+    ],
+    "hash": "hllwl5a6tqmhxfalbxzv5avrhm2fhicz"
+   }
+  },
+  "tkzmx3nefgze4l6hajxzj2225y3npre3": {
+   "sqlite": {
+    "version": "3.33.0",
+    "arch": {
+     "platform": "darwin",
+     "platform_os": "catalina",
+     "target": {
+      "name": "skylake",
+      "vendor": "GenuineIntel",
+      "features": [
+       "adx",
+       "aes",
+       "avx",
+       "avx2",
+       "bmi1",
+       "bmi2",
+       "clflushopt",
+       "f16c",
+       "fma",
+       "mmx",
+       "movbe",
+       "pclmulqdq",
+       "popcnt",
+       "rdrand",
+       "rdseed",
+       "sse",
+       "sse2",
+       "sse4_1",
+       "sse4_2",
+       "ssse3",
+       "xsavec",
+       "xsaveopt"
+      ],
+      "generation": 0,
+      "parents": [
+       "broadwell"
+      ]
+     }
+    },
+    "compiler": {
+     "name": "apple-clang",
+     "version": "11.0.3"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "column_metadata": true,
+     "fts": true,
+     "functions": false,
+     "rtree": false,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    },
+    "dependencies": {
+     "readline": {
+      "hash": "ofcsahtvz5leidmnpgwrsq77gqah6kpr",
+      "type": [
+       "build",
+       "link"
+      ]
+     },
+     "zlib": {
+      "hash": "id3vwmqu67cgexfopp3rut5wubjdwbjy",
+      "type": [
+       "build",
+       "link"
+      ]
+     }
+    },
+    "hash": "msbovaw7uzqb3epqvn7w4hbqofjlurpt"
+   }
+  }
+ }
+}
