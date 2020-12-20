@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@architect/architect": "^6.3.5"
+    "@architect/architect": "^8.4.1"
   },
   "private": true
 }
