@@ -3,16 +3,6 @@ const r = require('ramda')
 const dff = require('date-fns/fp')
 const util = require('util')
 
-const omitUselessProps = r.omit([
-  'created_raw',
-  'forward',
-  'id',
-  'messageId',
-  'saved',
-  'transport',
-  'url'
-])
-
 async function getRecentFailuresAsOf(date) {
   const isRecent = dff.isAfter(dff.subHours(25)(date))
   return got(
@@ -31,7 +21,7 @@ exports.getRecentFailuresAsOf = getRecentFailuresAsOf
 const simplifyEvent = r.pick(['status', 'local', 'created', 'message'])
 
 const simplifyLogEntry = r.pipe(
-  omitUselessProps,
+  r.pick(['subject', 'sender', 'hostname', 'recipient', 'events']),
   r.over(r.lensProp('events'))(r.map(simplifyEvent))
 )
 
