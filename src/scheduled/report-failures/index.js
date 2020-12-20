@@ -27,13 +27,15 @@ async function getRecentFailuresAsOf(date) {
     .then(r.filter((x) => isRecent(dff.parseISO(x.created))))
 }
 
-const simplifyEvent = r.pick(['status', 'local', 'message'])
+const simplifyEvent = r.pick(['status', 'local', 'created', 'message'])
+
+const simplifyLogEntry = r.pipe(
+  omitUselessProps,
+  r.over(r.lensProp('events'))(r.map(simplifyEvent))
+)
 
 const logEntries2EmailBody = r.pipe(
-  r.map(r.pipe(
-    omitUselessProps,
-    r.over(r.lensProp('events'))(r.map(simplifyEvent))
-  )),
+  r.map(simplifyLogEntry),
   _ => util.inspect(_, {depth: 3})
 )
 
