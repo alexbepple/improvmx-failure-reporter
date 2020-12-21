@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@architect/architect@^8.4.1":
-  version "8.4.1"
-  resolved "https://registry.yarnpkg.com/@architect/architect/-/architect-8.4.1.tgz#ad8960b61fa7ab8e52fdd82af9617d4fc1cd4ec3"
-  integrity sha512-FsxprkAFuFLP/bXPWe0xzHluKQYm84l31dTH+wTUaaXNZO2c3rId4YLqewbpgkimxoo7LTsl9I7/jmsDQdc9lQ==
+"@architect/architect@^8.4.2":
+  version "8.4.2"
+  resolved "https://registry.yarnpkg.com/@architect/architect/-/architect-8.4.2.tgz#f1f77ae5b3a04114d86fd99e56cff3f8f46eb2b6"
+  integrity sha512-9vVsZ18/RRtfghWTWzc4dMmO8zrBOsx/Ldbv4tiL/G2xlt+1alRh2WRcP8wd7dbwEIjvZ9SJFmM1OY94tJKjCw==
   dependencies:
     "@architect/create" "1.3.2"
     "@architect/deploy" "2.3.1"
@@ -14,7 +14,7 @@
     "@architect/hydrate" "1.9.2"
     "@architect/logs" "2.0.1"
     "@architect/package" "6.0.2"
-    "@architect/sandbox" "3.3.2"
+    "@architect/sandbox" "3.3.3"
     aws-sdk "2.712.0"
     chalk "4.1.0"
     update-notifier "5.0.1"
@@ -137,10 +137,10 @@
   resolved "https://registry.yarnpkg.com/@architect/parser/-/parser-3.0.1.tgz#cb3cb62b1289cc8ab1f46cc9d2222c6fe0496664"
   integrity sha512-mXn5Ha5a3tEOV5vkGHLdrDinSRfO8g9s72gKuOWA13HJtGcfI+jkYrEdQbLqe63gz0RPQN27h0e1IKc2kSzqHw==
 
-"@architect/sandbox@3.3.2":
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/@architect/sandbox/-/sandbox-3.3.2.tgz#cceb4c68adcdb474c0420cae877703bcc0525eef"
-  integrity sha512-DAtvPFPuChaB/BRk6Jf0neDVubagnhC0O4qXDMRzBMW/90BgHd+4g7AF5ad8z9ACXFaz4FD2EGLcq6+Omazv+w==
+"@architect/sandbox@3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@architect/sandbox/-/sandbox-3.3.3.tgz#932e1199e99d3e84cc355850f9c66123f8da1535"
+  integrity sha512-n4CrgSnlxIsxMCkf2dfT20wiR5+q9vv1gJYocYflywbT9PHoSAL41j46G7V0hjcmzwq4lyDBUM7gRUXbhOuL3g==
   dependencies:
     "@architect/asap" "~3.13.8"
     "@architect/create" "~1.3.2"
