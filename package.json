@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@architect/architect": "7.x"
+    "@architect/architect": "^8.5.3"
   },
   "private": true,
   "devDependencies": {}
