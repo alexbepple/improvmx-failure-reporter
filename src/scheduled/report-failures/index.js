@@ -25,7 +25,7 @@ const simplifyLogEntry = r.pipe(
   r.over(r.lensProp('events'))(r.map(simplifyEvent))
 )
 
-const summarizeEntry = r.pipe(x => [x.subject, x.sender.email], r.join('\n'))
+const summarizeEntry = r.pipe(x => [x.subject, x.sender.email], r.join(' | '))
 const summarizeEntries = r.pipe(r.map(summarizeEntry), r.join('\n---\n'))
 
 const createEmail = (summary, details) => `
