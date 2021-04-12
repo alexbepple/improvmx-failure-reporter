@@ -3,6 +3,7 @@
   "dependencies": {
     "date-fns": "^2.12.0",
     "got": "^11.0.2",
+    "lorem-ipsum": "^2.0.3",
     "ramda": "^0.27.0"
   }
 }

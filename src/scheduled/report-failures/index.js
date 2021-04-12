@@ -2,6 +2,7 @@ const got = require('got')
 const r = require('ramda')
 const dff = require('date-fns/fp')
 const util = require('util')
+const loremIpsum = require('lorem-ipsum').loremIpsum
 
 async function getRecentFailuresAsOf(date) {
   const isRecent = dff.isAfter(dff.subHours(25)(date))
@@ -36,6 +37,10 @@ ${summary}
 Details
 =======
 ${details}
+
+Prevent categorization as spam
+==============================
+${loremIpsum({ count: 20, units: 'paragraphs' })}
 `
 
 const logEntries2EmailBody = r.pipe(
