@@ -34,10 +34,6 @@ const createEmail = (summary, details) => `
 Summary
 =======
 ${summary}
-
-Details
-=======
-${details}
 `
 
 const logEntries2EmailBody = r.pipe(
