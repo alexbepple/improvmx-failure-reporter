@@ -7,7 +7,7 @@ const loremIpsum = require('lorem-ipsum').loremIpsum
 async function getRecentFailuresAsOf(date) {
   const isRecent = dff.isAfter(dff.subHours(25)(date))
   return got(
-    'https://api.improvmx.com/v2/domains/bepple.de/logs?filter=failure',
+    'https://api.improvmx.com/v3/domains/bepple.de/logs?filter=failure',
     {
       username: 'api',
       password: process.env.IMPROVMX_KEY,
@@ -15,7 +15,7 @@ async function getRecentFailuresAsOf(date) {
     }
   )
     .then(x => x.body.logs)
-    .then(r.filter(x => isRecent(dff.parseISO(x.created))))
+    .then(r.filter(x => isRecent(new Date(x.created))))
 }
 exports.getRecentFailuresAsOf = getRecentFailuresAsOf
 
