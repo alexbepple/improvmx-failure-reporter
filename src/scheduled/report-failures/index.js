@@ -4,20 +4,22 @@ const dff = require('date-fns/fp')
 const util = require('util')
 const loremIpsum = require('lorem-ipsum').loremIpsum
 
+const fetchAllFailures = () => got(
+  'https://api.improvmx.com/v3/domains/bepple.de/logs?filter=failure',
+  {
+    username: 'api',
+    password: process.env.IMPROVMX_KEY,
+    responseType: 'json'
+  }
+)
+
 async function getRecentFailuresAsOf(date) {
   const isRecent = dff.isAfter(dff.subHours(25)(date))
-  return got(
-    'https://api.improvmx.com/v3/domains/bepple.de/logs?filter=failure',
-    {
-      username: 'api',
-      password: process.env.IMPROVMX_KEY,
-      responseType: 'json',
-    }
-  )
+  return fetchAllFailures()
     .then(x => x.body.logs)
     .then(r.filter(x => isRecent(new Date(x.created))))
 }
-exports.getRecentFailuresAsOf = getRecentFailuresAsOf
+exports.getRecentFailuresAsOf = getRecentFailuresAsOf // for testing
 
 const simplifyEvent = r.pick(['status', 'local', 'created', 'message'])
 
