@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@architect/architect": "9.x"
+    "@architect/architect": "10.x"
   },
   "private": true,
   "devDependencies": {}
