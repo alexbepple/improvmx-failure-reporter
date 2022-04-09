@@ -1,4 +1,3 @@
-const got = require('got')
 const r = require('ramda')
 const dff = require('date-fns/fp')
 const util = require('util')
@@ -7,9 +6,8 @@ const { sendFailuresReport } = require('./send-report')
 const { fetchAllFailures, itemT } = require('./improvmx')
 
 async function getRecentFailuresAsOf(date) {
-  const isRecent = dff.isAfter(dff.subHours(25)(date))
   return fetchAllFailures()
-    .then(r.filter(x => isRecent(new Date(x.created))))
+    .then(r.filter(itemT.wasCreatedAfter(dff.subHours(25)(date))))
     .then(r.reject(itemT.hasBeenDeliveredInTheEnd))
 }
 exports.getRecentFailuresAsOf = getRecentFailuresAsOf // for testing
