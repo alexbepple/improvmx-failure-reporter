@@ -13,11 +13,18 @@ const fetchAllFailures = () => got(
   }
 )
 
+const entryT = {
+  getSubject: r.prop('subject'),
+  getSenderEmail: x => x.sender.email,
+  hasBeenDeliveredInTheEnd: x => r.any(r.whereEq({status: 'DELIVERED'}))(x.events)
+}
+
 async function getRecentFailuresAsOf(date) {
   const isRecent = dff.isAfter(dff.subHours(25)(date))
   return fetchAllFailures()
     .then(x => x.body.logs)
     .then(r.filter(x => isRecent(new Date(x.created))))
+    .then(r.reject(entryT.hasBeenDeliveredInTheEnd))
 }
 exports.getRecentFailuresAsOf = getRecentFailuresAsOf // for testing
 
@@ -28,10 +35,6 @@ const simplifyLogEntry = r.pipe(
   r.over(r.lensProp('events'))(r.map(simplifyEvent))
 )
 
-const entryT = {
-  getSubject: r.prop('subject'),
-  getSenderEmail: x => x.sender.email,
-}
 const getUniqueSenderEmails = r.pipe(r.map(entryT.getSenderEmail), r.uniq)
 const summarizeEntries = r.pipe(
   r.groupBy(entryT.getSubject),
