@@ -3,26 +3,12 @@ const r = require('ramda')
 const dff = require('date-fns/fp')
 const util = require('util')
 const { encryptForAlex } = require('./pgp-alex')
-
-const fetchAllFailures = () => got(
-  'https://api.improvmx.com/v3/domains/bepple.de/logs?filter=failure',
-  {
-    username: 'api',
-    password: process.env.IMPROVMX_KEY,
-    responseType: 'json'
-  }
-)
-
-const itemT = {
-  getSubject: r.prop('subject'),
-  getSenderAddress: x => x.sender.email,
-  hasBeenDeliveredInTheEnd: x => r.any(r.whereEq({status: 'DELIVERED'}))(x.events)
-}
+const { sendFailuresReport } = require('./send-report')
+const { fetchAllFailures, itemT } = require('./improvmx')
 
 async function getRecentFailuresAsOf(date) {
   const isRecent = dff.isAfter(dff.subHours(25)(date))
   return fetchAllFailures()
-    .then(x => x.body.logs)
     .then(r.filter(x => isRecent(new Date(x.created))))
     .then(r.reject(itemT.hasBeenDeliveredInTheEnd))
 }
@@ -59,26 +45,6 @@ const logItems2EmailBody = r.pipe(
 )
 exports.logItems2EmailBody = logItems2EmailBody
 
-async function sendEmail(body) {
-  return got
-    .post('https://api.mailjet.com/v3.1/send', {
-      username: process.env.MJ_APIKEY_PUBLIC,
-      password: process.env.MJ_APIKEY_PRIVATE,
-      responseType: 'json',
-      json: {
-        Messages: [
-          {
-            From: { Name: 'ImprovMX bot', Email: 'alex@bepple.de' },
-            To: [{ Email: 'alex@bepple.de' }],
-            Subject: 'ImprovMX failures for bepple.de',
-            TextPart: body,
-          },
-        ],
-      },
-    })
-    .then(x => x.body)
-}
-
 const log = x => console.log(JSON.stringify(x, null, 2))
 
 exports.handler = async function (event) {
@@ -87,5 +53,5 @@ exports.handler = async function (event) {
   const recentFailures = await getRecentFailuresAsOf(dff.parseISO(event.time))
   log(recentFailures)
 
-  log(await sendEmail(await encryptForAlex(logItems2EmailBody(recentFailures))))
+  log(await sendFailuresReport(await encryptForAlex(logItems2EmailBody(recentFailures))))
 }
