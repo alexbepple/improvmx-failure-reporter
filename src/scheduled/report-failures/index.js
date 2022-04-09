@@ -2,6 +2,7 @@ const got = require('got')
 const r = require('ramda')
 const dff = require('date-fns/fp')
 const util = require('util')
+const { encryptForAlex } = require('./pgp-alex')
 
 const fetchAllFailures = () => got(
   'https://api.improvmx.com/v3/domains/bepple.de/logs?filter=failure',
@@ -83,5 +84,5 @@ exports.handler = async function (event) {
   const recentFailures = await getRecentFailuresAsOf(dff.parseISO(event.time))
   log(recentFailures)
 
-  log(await sendEmail(logEntries2EmailBody(recentFailures)))
+  log(await sendEmail(await encryptForAlex(logEntries2EmailBody(recentFailures))))
 }

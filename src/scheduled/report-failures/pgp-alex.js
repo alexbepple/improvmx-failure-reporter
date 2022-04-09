@@ -1,0 +1,68 @@
+const openpgp = require('openpgp')
+
+const publicKeyArmored = `
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: FlowCrypt Email Encryption 8.2.4
+Comment: Seamlessly send and receive encrypted email
+
+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
+Cp6+acnBPYHoxP7sNFjaVTIHnrR8ag==
+=vTGz
+-----END PGP PUBLIC KEY BLOCK-----
+`
+
+exports.encryptForAlex = async (body) => {
+  const publicKey = await openpgp.readKey({ armoredKey: publicKeyArmored })
+  return await openpgp.encrypt({
+    message: await openpgp.createMessage({ text: body }),
+    encryptionKeys: publicKey
+  })
+}
