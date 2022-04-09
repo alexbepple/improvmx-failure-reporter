@@ -27,11 +27,16 @@ const simplifyLogEntry = r.pipe(
   r.over(r.lensProp('events'))(r.map(simplifyEvent))
 )
 
-const summarizeEntry = r.pipe(x => [x.subject, x.sender.email], r.join(' | '))
+const entryT = {
+  getSubject: r.prop('subject'),
+  getSenderEmail: x => x.sender.email,
+}
+const getUniqueSenderEmails = r.pipe(r.map(entryT.getSenderEmail), r.uniq)
 const summarizeEntries = r.pipe(
-  r.map(summarizeEntry),
+  r.groupBy(entryT.getSubject),
+  r.map(xx => `${entryT.getSubject(r.head(xx))} | ${r.join(', ')(getUniqueSenderEmails(xx))}`),
+  r.values,
   r.sortBy(r.identity),
-  r.uniq,
   r.join('\n---\n'),
 )
 
