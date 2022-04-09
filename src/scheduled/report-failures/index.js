@@ -13,7 +13,7 @@ const fetchAllFailures = () => got(
   }
 )
 
-const entryT = {
+const itemT = {
   getSubject: r.prop('subject'),
   getSenderAddress: x => x.sender.email,
   hasBeenDeliveredInTheEnd: x => r.any(r.whereEq({status: 'DELIVERED'}))(x.events)
@@ -24,21 +24,21 @@ async function getRecentFailuresAsOf(date) {
   return fetchAllFailures()
     .then(x => x.body.logs)
     .then(r.filter(x => isRecent(new Date(x.created))))
-    .then(r.reject(entryT.hasBeenDeliveredInTheEnd))
+    .then(r.reject(itemT.hasBeenDeliveredInTheEnd))
 }
 exports.getRecentFailuresAsOf = getRecentFailuresAsOf // for testing
 
 const simplifyEvent = r.pick(['status', 'local', 'created', 'message'])
 
-const simplifyLogEntry = r.pipe(
+const simplifyLogItem = r.pipe(
   r.pick(['subject', 'sender', 'hostname', 'recipient', 'events']),
   r.over(r.lensProp('events'))(r.map(simplifyEvent))
 )
 
-const getUniqueSenderEmails = r.pipe(r.map(entryT.getSenderAddress), r.uniq)
-const summarizeEntries = r.pipe(
-  r.groupBy(entryT.getSubject),
-  r.map(xx => `${entryT.getSubject(r.head(xx))} | ${r.join(', ')(getUniqueSenderEmails(xx))}`),
+const getUniqueSenderAddresses = r.pipe(r.map(itemT.getSenderAddress), r.uniq)
+const summarizeItems = r.pipe(
+  r.groupBy(itemT.getSubject),
+  r.map(xx => `${itemT.getSubject(r.head(xx))} | ${r.join(', ')(getUniqueSenderAddresses(xx))}`),
   r.values,
   r.sortBy(r.identity),
   r.join('\n---\n'),
@@ -50,14 +50,14 @@ Summary
 ${summary}
 `
 
-const logEntries2EmailBody = r.pipe(
-  r.map(simplifyLogEntry),
+const logItems2EmailBody = r.pipe(
+  r.map(simplifyLogItem),
   r.converge(createEmail, [
-    summarizeEntries,
+    summarizeItems,
     _ => util.inspect(_, { depth: 3 }),
   ])
 )
-exports.logEntries2EmailBody = logEntries2EmailBody
+exports.logItems2EmailBody = logItems2EmailBody
 
 async function sendEmail(body) {
   return got
@@ -87,5 +87,5 @@ exports.handler = async function (event) {
   const recentFailures = await getRecentFailuresAsOf(dff.parseISO(event.time))
   log(recentFailures)
 
-  log(await sendEmail(await encryptForAlex(logEntries2EmailBody(recentFailures))))
+  log(await sendEmail(await encryptForAlex(logItems2EmailBody(recentFailures))))
 }
