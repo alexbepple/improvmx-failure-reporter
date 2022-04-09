@@ -15,7 +15,7 @@ const fetchAllFailures = () => got(
 
 const entryT = {
   getSubject: r.prop('subject'),
-  getSenderEmail: x => x.sender.email,
+  getSenderAddress: x => x.sender.email,
   hasBeenDeliveredInTheEnd: x => r.any(r.whereEq({status: 'DELIVERED'}))(x.events)
 }
 
@@ -35,7 +35,7 @@ const simplifyLogEntry = r.pipe(
   r.over(r.lensProp('events'))(r.map(simplifyEvent))
 )
 
-const getUniqueSenderEmails = r.pipe(r.map(entryT.getSenderEmail), r.uniq)
+const getUniqueSenderEmails = r.pipe(r.map(entryT.getSenderAddress), r.uniq)
 const summarizeEntries = r.pipe(
   r.groupBy(entryT.getSubject),
   r.map(xx => `${entryT.getSubject(r.head(xx))} | ${r.join(', ')(getUniqueSenderEmails(xx))}`),
